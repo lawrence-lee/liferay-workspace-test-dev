@@ -11,6 +11,7 @@ dependencies {
 
 buildService {
 	apiDir = "../sample-api/src/main/java"
+	testDir = "../sample-test/src/testIntegration/java"
 }
 
 group = "com.liferay.sample"
