@@ -35,3 +35,8 @@ dependencies {
 	testModules group: "com.liferay", name: "com.liferay.sync.api", version: "5.0.6"
 	testModules group: "com.liferay", name: "com.liferay.sync.service", version: "3.0.9"
 }
+
+// this will no longer be necessary in future versions of workspace
+setUpTestableTomcat {
+	dependsOn ":initBundle"
+}
