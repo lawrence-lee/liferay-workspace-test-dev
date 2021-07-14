@@ -14,19 +14,18 @@
 
 package com.liferay.sample.model.impl;
 
-import com.liferay.petra.lang.HashUtil;
-import com.liferay.petra.string.StringBundler;
-import com.liferay.portal.kernel.model.CacheModel;
-import com.liferay.sample.model.Foo;
-
 import java.io.Externalizable;
 import java.io.IOException;
 import java.io.ObjectInput;
 import java.io.ObjectOutput;
-
 import java.util.Date;
 
 import org.osgi.annotation.versioning.ProviderType;
+
+import com.liferay.petra.lang.HashUtil;
+import com.liferay.petra.string.StringBundler;
+import com.liferay.portal.kernel.model.CacheModel;
+import com.liferay.sample.model.Foo;
 
 /**
  * The cache model class for representing Foo in entity cache.
