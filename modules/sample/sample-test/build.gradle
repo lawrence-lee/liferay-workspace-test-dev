@@ -2,6 +2,7 @@ dependencies {
 	// template start
 	testCompile group: "com.liferay", name: "com.liferay.petra.lang"
 	testCompile group: "com.liferay", name: "com.liferay.petra.string"
+	testCompile group: "com.liferay", name: "com.liferay.petra.sql.dsl.api"
 	testCompile group: "com.liferay", name: "com.liferay.registry.api"
 	testCompile group: "com.liferay.portal", name: "com.liferay.portal.kernel"
 	testCompile group: "javax.portlet", name: "portlet-api"
@@ -12,9 +13,10 @@ dependencies {
 	testCompile group: "org.slf4j", name: "slf4j-api"
 
 	testIntegrationCompile group: "com.liferay", name: "com.liferay.arquillian.extension.junit.bridge", version: "1.0.19"
-	testIntegrationCompile group: "com.liferay.portal", name: "com.liferay.portal.test", version: "6.0.7"
-	testIntegrationCompile group: "com.liferay.portal", name: "com.liferay.portal.test.integration", version: "6.0.7"
+	testIntegrationCompile group: "com.liferay.portal", name: "com.liferay.portal.test", version: "6.3.0"
+	testIntegrationCompile group: "com.liferay.portal", name: "com.liferay.portal.test.integration", version: "6.0.29"
 	testIntegrationCompile group: "log4j", name: "log4j", version: "1.2.17"
+	testIntegrationCompile group: "com.liferay", name: "com.liferay.petra.sql.dsl.api", version: "1.0.2"
 	// template end
 
 	// service builder template start
@@ -24,16 +26,15 @@ dependencies {
 
 	// these will be fixed by workspace
 	testModules group: "com.liferay", name: "com.liferay.arquillian.extension.junit.bridge.connector", version: "1.0.0"
-	testModules group: "com.liferay.portal", name: "com.liferay.portal.test", version: "6.0.7"
-	testModules group: "com.liferay.portal", name: "com.liferay.portal.test.integration", version: "6.0.7"
+	testModules group: "com.liferay.portal", name: "com.liferay.portal.test", version: "6.3.0"
+	testModules group: "com.liferay.portal", name: "com.liferay.portal.test.integration", version: "6.0.29"
 	testModules group: "org.apache.aries.jmx", name: "org.apache.aries.jmx.core", version: "1.1.7"
 
 	// this will no longer be necessary once we fix DestinationSyncRule
-	testModules group: "com.liferay", name: "com.liferay.sync.api", version: "5.0.6"
-	testModules group: "com.liferay", name: "com.liferay.sync.service", version: "3.0.9"
+	testModules group: "com.liferay", name: "com.liferay.sync.api", version: "6.2.1"
+	testModules group: "com.liferay", name: "com.liferay.sync.service", version: "4.0.9"
 }
 
-// the following configurations will no longer be necessary in future versions of workspace
 copyTestModules {
 	dependsOn ":modules:sample:sample-api:deploy", ":modules:sample:sample-service:deploy"
 }
