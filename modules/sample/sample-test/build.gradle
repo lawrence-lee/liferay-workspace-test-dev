@@ -1,6 +1,20 @@
+sourceCompatibility = "1.8";
+targetCompatibility = "1.8";
+
+copyTestModules {
+	dependsOn ":modules:sample:sample-api:deploy", ":modules:sample:sample-service:deploy"
+}
+
 dependencies {
+	// service builder template end
+	// service builder template start
+	// template end
 	// template start
+	// these will be fixed by workspace
+	// this will no longer be necessary once we fix DestinationSyncRule
+
 	testCompile group: "com.liferay", name: "com.liferay.petra.lang"
+	testCompile group: "com.liferay", name: "com.liferay.petra.sql.dsl.api"
 	testCompile group: "com.liferay", name: "com.liferay.petra.string"
 	testCompile group: "com.liferay", name: "com.liferay.registry.api"
 	testCompile group: "com.liferay.portal", name: "com.liferay.portal.kernel"
@@ -8,34 +22,23 @@ dependencies {
 	testCompile group: "junit", name: "junit"
 	testCompile group: "org.apache.felix", name: "org.apache.felix.http.servlet-api", version: "1.1.2"
 	testCompile group: "org.osgi", name: "org.osgi.core"
-	testCompile group: "org.springframework", name: "spring-test"
 	testCompile group: "org.slf4j", name: "slf4j-api"
+	testCompile group: "org.springframework", name: "spring-test"
 
 	testIntegrationCompile group: "com.liferay", name: "com.liferay.arquillian.extension.junit.bridge", version: "1.0.19"
-	testIntegrationCompile group: "com.liferay.portal", name: "com.liferay.portal.test", version: "6.0.7"
-	testIntegrationCompile group: "com.liferay.portal", name: "com.liferay.portal.test.integration", version: "6.0.7"
+	testIntegrationCompile group: "com.liferay", name: "com.liferay.petra.sql.dsl.api", version: "1.0.2"
+	testIntegrationCompile group: "com.liferay.portal", name: "com.liferay.portal.test", version: "default"
+	testIntegrationCompile group: "com.liferay.portal", name: "com.liferay.portal.test.integration", version: "default"
 	testIntegrationCompile group: "log4j", name: "log4j", version: "1.2.17"
-	// template end
-
-	// service builder template start
 	testIntegrationCompile project(":modules:sample:sample-api")
 	testIntegrationCompile project(":modules:sample:sample-service")
-	// service builder template end
 
-	// these will be fixed by workspace
 	testModules group: "com.liferay", name: "com.liferay.arquillian.extension.junit.bridge.connector", version: "1.0.0"
-	testModules group: "com.liferay.portal", name: "com.liferay.portal.test", version: "6.0.7"
-	testModules group: "com.liferay.portal", name: "com.liferay.portal.test.integration", version: "6.0.7"
+	testModules group: "com.liferay", name: "com.liferay.sync.api", version: "6.2.1"
+	testModules group: "com.liferay", name: "com.liferay.sync.service", version: "4.0.9"
+	testModules group: "com.liferay.portal", name: "com.liferay.portal.test", version: "default"
+	testModules group: "com.liferay.portal", name: "com.liferay.portal.test.integration", version: "default"
 	testModules group: "org.apache.aries.jmx", name: "org.apache.aries.jmx.core", version: "1.1.7"
-
-	// this will no longer be necessary once we fix DestinationSyncRule
-	testModules group: "com.liferay", name: "com.liferay.sync.api", version: "5.0.6"
-	testModules group: "com.liferay", name: "com.liferay.sync.service", version: "3.0.9"
-}
-
-// the following configurations will no longer be necessary in future versions of workspace
-copyTestModules {
-	dependsOn ":modules:sample:sample-api:deploy", ":modules:sample:sample-service:deploy"
 }
 
 setUpTestableTomcat {

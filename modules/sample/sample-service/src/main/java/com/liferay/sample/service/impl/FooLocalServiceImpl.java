@@ -38,9 +38,10 @@ import org.osgi.service.component.annotations.Component;
 )
 public class FooLocalServiceImpl extends FooLocalServiceBaseImpl {
 
-	/*
+	/**
 	 * NOTE FOR DEVELOPERS:
 	 *
 	 * Never reference this class directly. Use <code>com.liferay.sample.service.FooLocalService</code> via injection or a <code>org.osgi.util.tracker.ServiceTracker</code> or use <code>com.liferay.sample.service.FooLocalServiceUtil</code>.
 	 */
+
 }
